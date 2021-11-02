@@ -1,1 +1,122 @@
 Hi it's tushar
+
+Windows PowerShell
+Copyright (C) 2014 Microsoft Corporation. All rights res
+
+PS C:\Users\user\Desktop\cmd test> mkdir assignment
+
+
+    Directory: C:\Users\user\Desktop\cmd test
+
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d----        11/02/2021   2:35 PM            assignment
+
+
+PS C:\Users\user\Desktop\cmd test> cd .\assignment
+PS C:\Users\user\Desktop\cmd test\assignment> mkdir source
+
+
+    Directory: C:\Users\user\Desktop\cmd test\assignment
+
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d----        11/02/2021   2:35 PM            source
+
+
+PS C:\Users\user\Desktop\cmd test\assignment> mkdir destination
+
+
+    Directory: C:\Users\user\Desktop\cmd test\assignment
+
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+d----        11/02/2021   2:36 PM            destination
+
+
+PS C:\Users\user\Desktop\cmd test\assignment> cd .\source
+PS C:\Users\user\Desktop\cmd test\assignment\source> cat > file.txt
+
+cmdlet Get-Content at command pipeline position 1
+Supply values for the following parameters:
+Path[0]: source file content
+Path[1]:
+cat : Cannot find path 'C:\Users\user\Desktop\cmd 
+test\assignment\source\source file content' because it does not exist.
+At line:1 char:1
++ cat > file.txt
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\user\D...ce fil 
+   e content:String) [Get-Content], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Command 
+   s.GetContentCommand
+ 
+PS C:\Users\user\Desktop\cmd test\assignment\source> cp file.text destination
+cp : Cannot find path 'C:\Users\user\Desktop\cmd test\assignment\source\file.text' because it does not exist.
+At line:1 char:1
++ cp file.text destination
++ ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\
+    + FullyQualifiedErrorId : PathNotFound,Microso
+ 
+PS C:\Users\user\Desktop\cmd test\assignment\sourc
+Copy-Item : A positional parameter cannot be found
+At line:1 char:1
++ cp file.txt source destination
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:)
+    + FullyQualifiedErrorId : PositionalParameterN
+ 
+PS C:\Users\user\Desktop\cmd test\assignment\sourc
+PS C:\Users\user\Desktop\cmd test\assignment> cp f
+Copy-Item : A positional parameter cannot be found
+At line:1 char:1
++ cp file.txt source destination
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:)
+    + FullyQualifiedErrorId : PositionalParameterN
+ 
+PS C:\Users\user\Desktop\cmd test\assignment> cp -file.txt source destination
+Copy-Item : A parameter cannot be found that matches parameter name 'file'.
+At line:1 char:4
++ cp -file.txt source destination
++    ~~~~~
+    + CategoryInfo          : InvalidArgument: (:) [Copy-Item], ParameterBindingException
+    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
+ 
+PS C:\Users\user\Desktop\cmd test\assignment> cp source/file.txt destination
+PS C:\Users\user\Desktop\cmd test\assignment> cd .\destination
+PS C:\Users\user\Desktop\cmd test\assignment\destination> ls
+
+
+    Directory: C:\Users\user\Desktop\cmd test\assignment\destination
+
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---        11/02/2021   2:39 PM          0 file.txt
+
+
+PS C:\Users\user\Desktop\cmd test\assignment\destination> cd ..
+PS C:\Users\user\Desktop\cmd test\assignment> cd .\destination
+PS C:\Users\user\Desktop\cmd test\assignment\destination> rm file.txt
+PS C:\Users\user\Desktop\cmd test\assignment\destination> ls
+PS C:\Users\user\Desktop\cmd test\assignment\destination> cd ..
+PS C:\Users\user\Desktop\cmd test\assignment> mv source/file.txt destination
+PS C:\Users\user\Desktop\cmd test\assignment> cd .\destination
+PS C:\Users\user\Desktop\cmd test\assignment\destination> ls
+
+
+    Directory: C:\Users\user\Desktop\cmd test\assignment\destination
+
+
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---        11/02/2021   2:39 PM          0 file.txt
+
+
+PS C:\Users\user\Desktop\cmd test\assignment\destination> cd ..
+PS C:\Users\user\Desktop\cmd test\assignment>
