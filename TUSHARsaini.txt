@@ -1,122 +1,81 @@
-Hi it's tushar
-
-Windows PowerShell
-Copyright (C) 2014 Microsoft Corporation. All rights res
-
-PS C:\Users\user\Desktop\cmd test> mkdir assignment
+Hi it's Tushar here.
 
 
-    Directory: C:\Users\user\Desktop\cmd test
+
+First assignment commands -
 
 
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
-d----        11/02/2021   2:35 PM            assignment
+user@lenovo MINGW64 ~/Desktop/cmdtest
+$ pwd
+/c/Users/user/Desktop/cmdtest
 
+user@lenovo MINGW64 ~/Desktop/cmdtest
+$ mkdir assignment
 
-PS C:\Users\user\Desktop\cmd test> cd .\assignment
-PS C:\Users\user\Desktop\cmd test\assignment> mkdir source
+user@lenovo MINGW64 ~/Desktop/cmdtest
+$ cd assignment
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ mkdir source
 
-    Directory: C:\Users\user\Desktop\cmd test\assignment
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ mkdir destination
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ cd source/
 
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
-d----        11/02/2021   2:35 PM            source
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/source
+$ cat > file.txt
+Source file content.
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/source
+$
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/source
+$ cd ..
 
-PS C:\Users\user\Desktop\cmd test\assignment> mkdir destination
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ cp source/file.txt destination
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ cd destination/
 
-    Directory: C:\Users\user\Desktop\cmd test\assignment
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ rm file.txt
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ ls
 
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
-d----        11/02/2021   2:36 PM            destination
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ cd ..
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ mv source/file.txt destination
 
-PS C:\Users\user\Desktop\cmd test\assignment> cd .\source
-PS C:\Users\user\Desktop\cmd test\assignment\source> cat > file.txt
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment
+$ cd destination/
 
-cmdlet Get-Content at command pipeline position 1
-Supply values for the following parameters:
-Path[0]: source file content
-Path[1]:
-cat : Cannot find path 'C:\Users\user\Desktop\cmd 
-test\assignment\source\source file content' because it does not exist.
-At line:1 char:1
-+ cat > file.txt
-+ ~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (C:\Users\user\D...ce fil 
-   e content:String) [Get-Content], ItemNotFoundException
-    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Command 
-   s.GetContentCommand
- 
-PS C:\Users\user\Desktop\cmd test\assignment\source> cp file.text destination
-cp : Cannot find path 'C:\Users\user\Desktop\cmd test\assignment\source\file.text' because it does not exist.
-At line:1 char:1
-+ cp file.text destination
-+ ~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (C:\
-    + FullyQualifiedErrorId : PathNotFound,Microso
- 
-PS C:\Users\user\Desktop\cmd test\assignment\sourc
-Copy-Item : A positional parameter cannot be found
-At line:1 char:1
-+ cp file.txt source destination
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:)
-    + FullyQualifiedErrorId : PositionalParameterN
- 
-PS C:\Users\user\Desktop\cmd test\assignment\sourc
-PS C:\Users\user\Desktop\cmd test\assignment> cp f
-Copy-Item : A positional parameter cannot be found
-At line:1 char:1
-+ cp file.txt source destination
-+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : InvalidArgument: (:)
-    + FullyQualifiedErrorId : PositionalParameterN
- 
-PS C:\Users\user\Desktop\cmd test\assignment> cp -file.txt source destination
-Copy-Item : A parameter cannot be found that matches parameter name 'file'.
-At line:1 char:4
-+ cp -file.txt source destination
-+    ~~~~~
-    + CategoryInfo          : InvalidArgument: (:) [Copy-Item], ParameterBindingException
-    + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
- 
-PS C:\Users\user\Desktop\cmd test\assignment> cp source/file.txt destination
-PS C:\Users\user\Desktop\cmd test\assignment> cd .\destination
-PS C:\Users\user\Desktop\cmd test\assignment\destination> ls
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ ls
+file.txt
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ cat > file.txt
+FunctionUp help you break the glass ceiling which blocks entry to tech.FunctionUp help you break the glass ceiling which blocks entry to tech.FunctionUp help you break the glass ceiling which blocks entry to tech.FunctionUp help you break the glass ceiling which blocks entry to tech.
 
-    Directory: C:\Users\user\Desktop\cmd test\assignment\destination
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ grep -i file.txt
 
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ cat > file.txt
+FunctionUp help you break the glass ceiling which blocks entry to tech.
+FunctionUp is the best place to learn coding.
+FunctionUp is the place where we can enhance our coding skills.
 
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
--a---        11/02/2021   2:39 PM          0 file.txt
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$ grep -o "FunctionUp" file.txt
+FunctionUp
+FunctionUp
+FunctionUp
 
-
-PS C:\Users\user\Desktop\cmd test\assignment\destination> cd ..
-PS C:\Users\user\Desktop\cmd test\assignment> cd .\destination
-PS C:\Users\user\Desktop\cmd test\assignment\destination> rm file.txt
-PS C:\Users\user\Desktop\cmd test\assignment\destination> ls
-PS C:\Users\user\Desktop\cmd test\assignment\destination> cd ..
-PS C:\Users\user\Desktop\cmd test\assignment> mv source/file.txt destination
-PS C:\Users\user\Desktop\cmd test\assignment> cd .\destination
-PS C:\Users\user\Desktop\cmd test\assignment\destination> ls
-
-
-    Directory: C:\Users\user\Desktop\cmd test\assignment\destination
-
-
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
--a---        11/02/2021   2:39 PM          0 file.txt
-
-
-PS C:\Users\user\Desktop\cmd test\assignment\destination> cd ..
-PS C:\Users\user\Desktop\cmd test\assignment>
+user@lenovo MINGW64 ~/Desktop/cmdtest/assignment/destination
+$
