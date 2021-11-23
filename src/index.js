@@ -22,8 +22,7 @@ app.listen(process.env.PORT || 3000, function() {
 
 
 
-// Nov.22----Assignment--------
-// Write a middleware that logs (console.log) some data everytime any API is hit.
+
 
 
 // const dateTime = require('node-datetime');

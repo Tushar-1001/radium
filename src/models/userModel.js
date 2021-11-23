@@ -1,17 +1,33 @@
-const mongoose=require('mongoose')
+const mongoose = require('mongoose')
 
-const userSchema = new mongoose.Schema({
-    name: String,
-    balance : {type:Number, default : 100},
-    address : String,
-    age : Number,
-    gender :{type : String, enum : ["male","female","others"]},
-    freeAppUser: {type:Boolean , default : false}
-    
+
+const userSchema= new mongoose.Schema({
+
+
+    userName: {
+        type: String,
+        required: true,
+        unique:true
+    },
+      
+    mobile: {
+        type: Number,
+        required: true
+    },
+    email: {
+        type: String,
+        required: true
+    },
+
+    password: {
+        type: String,
+        required: true
+    },
+    isDeleted: {
+        type: Boolean,
+        default: false
+    },
 
 }, {timestamps: true} )
 
-
-
-module.exports=mongoose.model('User',userSchema)
-
+module.exports = mongoose.model( 'new_User', userSchema ) 

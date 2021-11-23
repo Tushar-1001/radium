@@ -1,31 +1,20 @@
 const express = require('express');
 const router = express.Router();
-
-const productController= require("../controllers/productController")
-const orderController= require("../controllers/orderController")
 const userController= require("../controllers/userController")
-const middleware= require("../middleware/middleware")
+const commonMW= require("../Middlewares/middlewares")
 
-// -------Nov.22,2021----Middlewares Assignment 2-------------------------------------------
+// var jwt = require('json-web-token');
+const jwt = require("jsonwebtoken");
 
-router.get('/test-me2', function (req, res) {
-    res.send('Middlewares Assignment 2!')
-    
-});
+//<-------------------------------------------------------------------------------------
 
+router.post('/createUser',  userController.createUser  );
+router.post('/login',  userController.login  );
+router.get('/users/:userId', commonMW.checkAuthentication, userController.users  );
+router.put('/updateUser/:userId', commonMW.checkAuthentication, userController.updateUser );
+//-----------------------------------------------------------------------------------------
 
-
-
-router.post('/createUser', middleware.mid, userController.createUser );
-router.post('/createProduct',  productController.createProduct );
-router.post('/createOrder',middleware.mid,  orderController.createOrder );
-
-
-
+router.get('/getUser',  userController.getUser  );
 
 
 module.exports = router;
-
-
-
-
