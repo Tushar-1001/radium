@@ -10,6 +10,7 @@ const jwt = require("jsonwebtoken");
 
 router.post('/createUser',  userController.createUser  );
 router.post('/login',  userController.login  );
+// ------------------------------------------------------------------------------
 router.get('/users/:userId', commonMW.checkAuthentication, userController.users  );
 router.put('/updateUser/:userId', commonMW.checkAuthentication, userController.updateUser );
 //-----------------------------------------------------------------------------------------
