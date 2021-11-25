@@ -1,21 +1,22 @@
 const express = require('express');
 const router = express.Router();
-const userController= require("../controllers/userController")
-const commonMW= require("../Middlewares/middlewares")
 
-// var jwt = require('json-web-token');
-const jwt = require("jsonwebtoken");
+const commonController= require("../controllers/commonController")
 
-//<-------------------------------------------------------------------------------------
+router.get("/cowin/states", commonController.getStatesList)
+router.get("/cowin/districts/:stateId", commonController.getDistrictsList)
+router.get("/cowin/centers", commonController.getByPin)
+router.post("/cowin/getOtp", commonController.getOtp)
+// router.post("/cowin/confirmOtp", commonController.confirmOtp)
 
-router.post('/createUser',  userController.createUser  );
-router.post('/login',  userController.login  );
-// ------------------------------------------------------------------------------
-router.get('/users/:userId', commonMW.checkAuthentication, userController.users  );
-router.put('/updateUser/:userId', commonMW.checkAuthentication, userController.updateUser );
-//-----------------------------------------------------------------------------------------
+// ------------------------------------------------------------
+router.get("/londonWeather", commonController.londonWeather)
+router.get("/weather", commonController.getWeather)
 
-router.get('/getUser',  userController.getUser  );
+
+
+
+
 
 
 module.exports = router;
