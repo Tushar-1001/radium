@@ -1,33 +1,25 @@
 const mongoose = require('mongoose')
 
 
-const userSchema= new mongoose.Schema({
+const cryptoSchema = new mongoose.Schema({
 
 
-    userName: {
+    symbol: {
         type: String,
-        required: true,
-        unique:true
+        unique: true
     },
-      
-    mobile: {
-        type: Number,
-        required: true
-    },
-    email: {
+    name: {
         type: String,
-        required: true
+        unique: true
+    },
+    marketCapUsd: {
+        type: String
+    },
+    priceUsd: {
+        type: String
     },
 
-    password: {
-        type: String,
-        required: true
-    },
-    isDeleted: {
-        type: Boolean,
-        default: false
-    },
 
-}, {timestamps: true} )
+}, { timestamps: true })
 
-module.exports = mongoose.model( 'new_User', userSchema ) 
+module.exports = mongoose.model('Crypto', cryptoSchema)
