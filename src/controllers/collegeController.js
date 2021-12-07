@@ -40,7 +40,7 @@ const registerCollege = async function (req, res) {
         if (DBlen != 0) {
             const duplicateCollegeName = await collegeModel.findOne({ fullName: fullName });
             if (duplicateCollegeName) {
-                return res.status(201).send({ msg: "This college name is allready exists" });
+                return res.status(400).send({ msg: "This college name is allready exists" });
             }
             const duplicateLogolink = await collegeModel.findOne({ logoLink: logoLink })
             if (duplicateLogolink) {
@@ -73,7 +73,7 @@ const getDetails = async function (req, res) {
         const { name, fullName, logoLink } = collegeDetails
         const internDetails = await internModel.find({ collegeId: id }).select({ _id: 1, name: 1, mobile: 1, email: 1 });
         if (!internDetails) {
-            return res.status(201).send({ status: true, data: details, msg: "No student applied in this college for internship." });
+            return res.status(400).send({ status: true, data: details, msg: "No student applied in this college for internship." });
         }
         let details = { name, fullName, logoLink, internDetails }
         return res.status(201).send({ status: true, collegData: details });
