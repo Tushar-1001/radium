@@ -8,7 +8,13 @@ const registerCollege = async function (req, res) {
     try {
         const { name, fullName, logoLink, isDeleted } = req.body;//We are using destructuring property of Javascript
         const requestBody = req.body;
-
+        
+ //---------We are using the split function to check that the college name is in single word or not----------//
+        const collegeval = name.split(" ");
+        const len = collegeval.length
+        if(len>1) {
+            return res.status(400).send({ status: false, msg: "Abbreviated college name should be in a single word" });
+        }
         //Validate body
         if (!validateBody.isValidRequestBody(req.body)) {
             return res.status(400).send({ status: false, msg: "Please provide college body" });
