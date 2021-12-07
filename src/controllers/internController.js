@@ -35,12 +35,12 @@ const internRegistration = async function (req, res) {
             const DuplicateEmailId = await internModel.find({ email: email });
             const emailFound = DuplicateEmailId.length;
             if (emailFound != 0) {
-                return res.status(404).send({ status: false, msg: "This Email Id allready exists in our Database " });
+                return res.status(400).send({ status: false, msg: "This Email Id allready exists in our Database " });
             }
             const duplicateMob = await internModel.findOne({ mobile: mobile })
             // const duplicateMobCount = duplicateMob.length
             if (duplicateMob) {
-                return res.status(404).send({ status: false, msg: "This mobile number allready exists in our Database" });
+                return res.status(400).send({ status: false, msg: "This mobile number allready exists in our Database" });
             }
         }
         // Cheking the email id is duplicate or not       
