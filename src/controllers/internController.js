@@ -25,7 +25,7 @@ const internRegistration = async function (req, res) {
         if (!validateBody.isValidSyntaxOfEmail(email)) {
             return res.status(404).send({ status: false, msg: "Please provide a valid Email Id" });
         }
-        if (!validateBody.isValidMobineNum(mobile)) {
+        if (!validateBody.isValidMobileNum(mobile)) {
             return res.status(400).send({ status: false, msg: 'Please provide a valid Mobile number.' })
         }
         let isDBexists = await internModel.find();
