@@ -16,6 +16,7 @@ const internSchema = new mongoose.Schema({
         mobile: {
             type: String,
             unique: true,
+            trim:true,
             required:'Mobile Number is Mandatory'
         },
         collegeId: {
