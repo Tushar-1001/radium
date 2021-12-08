@@ -13,7 +13,7 @@ const isValidRequestBody = function (requestBody) {
 
 
 const isValidMobineNum = function (value) {
-    if (!(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(value))) {
+    if (!(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(value.trim()))) {
         return false
     }
     return true
