@@ -12,7 +12,7 @@ const isValidRequestBody = function (requestBody) {
 }
 
 
-const isValidMobineNum = function (value) {
+const isValidMobileNum = function (value) {
     if (!(/^(\+\d{1,3}[- ]?)?\d{10}$/.test(value.trim()))) {
         return false
     }
@@ -32,5 +32,5 @@ module.exports = {
     isValid,
     isValidRequestBody,
     isValidSyntaxOfEmail,
-    isValidMobineNum
+    isValidMobileNum
 }
